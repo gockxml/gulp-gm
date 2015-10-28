@@ -46,6 +46,7 @@ var gulpGm = function (modifier, options) {
             return done(new PluginError(PLUGIN_NAME, err));
           } else {
             if (modifiedGmFile._outputFormat) {
+              file.source = file.path;
               file.path = file.path.replace(path.extname(file.path), "." + modifiedGmFile._outputFormat);
             }
             file.contents = buffer;
