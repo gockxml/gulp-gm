@@ -43,7 +43,7 @@ var gulpGm = function (modifier, options) {
       } else {
         modifiedGmFile.toBuffer(function (err, buffer) {
           if (err) {
-            return done(new PluginError(PLUGIN_NAME, err));
+            return done(null, file);
           } else {
             if (modifiedGmFile._outputFormat) {
               file.source = file.path;
